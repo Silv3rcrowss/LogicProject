@@ -1,3 +1,4 @@
+package maths;
 public class Implies extends Operation {
 
 	public Implies(Expression op1, Expression op2) {

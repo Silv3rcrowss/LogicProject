@@ -1,3 +1,4 @@
+package maths;
 public class Equivalent extends Operation {
 
 	public Equivalent(Expression op1, Expression op2) {

@@ -1,3 +1,4 @@
+package maths;
 public class Variable extends Expression {
 	
 	private final char nom;

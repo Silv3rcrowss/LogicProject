@@ -1,3 +1,4 @@
+package maths;
 import java.util.ArrayList;
 
 public class SAD {

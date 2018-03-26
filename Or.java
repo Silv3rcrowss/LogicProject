@@ -1,4 +1,4 @@
-
+package maths;
 public class Or extends Operation {
 
 	public Or(Expression op1, Expression op2) {

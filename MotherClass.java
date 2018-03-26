@@ -1,3 +1,4 @@
+package maths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,9 +8,14 @@ public class MotherClass {
 	private ArrayList<Variable> Variables=new ArrayList<Variable>();
 	private Table tableVerite;
 	private Expression head;
+	private fenetre fen;
 	//TODO Cette classe a pour but de tout gerer de l'analyse de l'expression a l'affichage du resultat
 	
 	
+	public MotherClass (fenetre f) {
+		super();
+		this.fen=f;
+	}
 	public MotherClass(String Expression) {
 		this.Expression=new String(Expression);
 		ArrayList<Character> chars=new ArrayList<Character>();
@@ -97,7 +103,7 @@ public class MotherClass {
 		Variables = variables;
 	}
 	
-	
+	/*
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		String expression=sc.nextLine();
@@ -105,7 +111,7 @@ public class MotherClass {
 		System.out.println(m.head+"\n");
 		System.out.println(m);
 		
-	}
+	}*/
 	
 	
 }

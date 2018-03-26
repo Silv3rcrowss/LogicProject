@@ -17,11 +17,12 @@ public class fenetre extends JFrame {
 	private JButton bouton5;
 	private JButton ok;
 	private Listener listen;
-	private testExpression test;
+	private MotherClass mc;
+	private JPanel panel = new JPanel();
 	
 
-	public testExpression getTest() {
-		return test;
+	public MotherClass getMc() {
+		return mc;
 	}
 
 	private JTextArea text;
@@ -29,10 +30,14 @@ public class fenetre extends JFrame {
 	public fenetre(){
 		super();
 		listen =new Listener(this);
-		test=new testExpression(this);
 		build();//On initialise notre fenêtre
 	}
 	
+	
+	public String setMc(String Expression) {
+		this.mc=new MotherClass(Expression);
+		return mc.toString();
+	} 
 	private void build(){
 		setTitle("Fenêtre qui affiche des boutons"); //On donne un titre à l'application
 		setSize(320,400); //On donne une taille à notre fenêtre
@@ -46,7 +51,7 @@ public class fenetre extends JFrame {
 	
 	
 	private JPanel buildContentPane(){
-		JPanel panel = new JPanel();
+		
 		panel.setLayout(new FlowLayout());
  
 		bouton = new JButton("⇒");
@@ -111,6 +116,11 @@ public class fenetre extends JFrame {
 
 	public JTextArea getText() {
 		return text;
+	}
+
+
+	public void add(String setMc) {
+		panel.add(setMc,panel);		
 	}
 	
 

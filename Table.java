@@ -1,3 +1,4 @@
+package maths;
 import java.util.ArrayList;
 
 import javax.swing.plaf.basic.BasicTabbedPaneUI.TabbedPaneLayout;

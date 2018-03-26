@@ -33,7 +33,8 @@ public class Listener implements ActionListener {
 				
 		}
 		else if(source == fen.getOk()) {
-			System.out.println(fen.getTest().testExpress(fen.getText().getText()));
+			System.out.println(fen.setMc(fen.getText().getText()));
+			
 			
 		}
 	}
