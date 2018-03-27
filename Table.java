@@ -1,4 +1,3 @@
-package maths;
 import java.util.ArrayList;
 
 import javax.swing.plaf.basic.BasicTabbedPaneUI.TabbedPaneLayout;
@@ -88,11 +87,11 @@ public class Table {
 	public String toString() {
 		String retour="";
 		for(char c:variables)
-			retour+=" ***";
-		retour+=" *****\n";
+			retour+=" _____";
+		retour+=" _____\n";
 		for(char c:variables)
-			retour+="* "+c+" ";
-		retour+="* Res *\n";
+			retour+="|  "+c+"  ";
+		retour+="| Res |\n";
 		for(int i=0;i<Math.pow(2,getnbVariables());i++) {
 			for(int j=0;j<tableVerite.size();j++) {
 				char val;
@@ -100,14 +99,17 @@ public class Table {
 					val='1';
 				else
 					val='0';
-				retour+="* "+val+" "; 
+				retour+="|  "+val+"  "; 
 			}
 			if(resultats.get(i)==true)
-				retour+="*  "+1+"  *\n";
+				retour+="|  "+1+"  |\n";
 			else
-				retour+="*  "+0+"  *\n";
+				retour+="|  "+0+"  |\n";
 				
 		}
+		for(char c:variables)
+			retour+=" ¯¯¯¯¯";
+		retour+=" ¯¯¯¯¯\n";
 		return retour+tableVerite.size();
 		
 	}

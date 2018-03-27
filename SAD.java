@@ -1,4 +1,3 @@
-package maths;
 import java.util.ArrayList;
 
 public class SAD {
@@ -20,6 +19,18 @@ public class SAD {
 		this.tabInt.add(e);
 	}
 	
+	public SAD empilerCharpile(SAD pile) {
+		SAD sortie=new SAD();
+		while(!this.isEmpty()) {
+			sortie.empiler(this.defiler());
+		}
+		while(!pile.isEmpty()) {
+			this.tab.add(pile.defiler());
+		}
+		return sortie;
+	}
+	
+	
 	public char depiler(){
 		if(tab.isEmpty())
 			return (Character) null;
@@ -28,34 +39,45 @@ public class SAD {
 		return e;	
 	}
 	
-	public Expression depilerExp(){
+	public Expression depilerExp()throws Exception{
 		if(Expr.isEmpty())
-			return null;
+			throw new Exception();
 		Expression e=Expr.get(Expr.size()-1);
 		Expr.remove(Expr.size()-1);
 		return e;	
 	}
 	
+	
+	public int defilerInt() {
+		if(this.isEmptyInt())
+			return 0;
+		int x=tabInt.get(0);
+		tabInt.remove(0);
+		return x;
+	}
+	
 	public int depilerInt(){
-		if(tabInt.isEmpty())
-			return  -1;
+		if(this.isEmptyInt())
+			return  0;
+		else {
 		int e=tabInt.get(tabInt.size()-1);
-		tab.remove(tabInt.size()-1);
-		return e;	
+		tabInt.remove(tabInt.size()-1);
+		return e;
+		}
 	}
 	
 	
 	public char defiler(){
 		if(tab.isEmpty())
-			return (Character) null;
+			return 'X';
 		char e=tab.get(0);
 		tab.remove(0);
 		return e;
 	}
 	
-	public Expression defilerExp(){
+	public Expression defilerExp()throws Exception{
 		if(Expr.isEmpty())
-			return null;
+			throw new Exception();
 		Expression e=Expr.get(0);
 		Expr.remove(0);
 		return e;
@@ -73,8 +95,23 @@ public class SAD {
 		return tab.isEmpty();
 	}
 	
+	public Boolean isEmptyInt() {
+		return tabInt.isEmpty();
+	}
+	
+	
 	public Boolean isEmptyExp() {
 		return Expr.isEmpty();
 	}
 	
+	public int getSizeInt() {
+		return this.tabInt.size();
+	}
+	
+	public String toString() {
+		String s="";
+		for(char c:tab)
+			s+=c;
+		return s;
+	}
 }

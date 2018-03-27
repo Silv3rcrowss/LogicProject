@@ -1,5 +1,3 @@
-
-package maths;
 public class Not extends Operation {
 
 	public Not(Expression op1) {

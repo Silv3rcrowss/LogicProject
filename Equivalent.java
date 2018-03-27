@@ -1,4 +1,3 @@
-package maths;
 public class Equivalent extends Operation {
 
 	public Equivalent(Expression op1, Expression op2) {
@@ -10,7 +9,7 @@ public class Equivalent extends Operation {
 	@Override
 	public Boolean valeur() {
 		// TODO Auto-generated method stub
-		return this.getOperande1()==this.getOperande2();
+		return this.getOperande1().valeur()==this.getOperande2().valeur();
 	}
 
 }

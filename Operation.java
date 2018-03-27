@@ -1,4 +1,3 @@
-package maths;
 public abstract class Operation extends Expression {
 	
 

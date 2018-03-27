@@ -1,4 +1,3 @@
-package maths;
 public class And extends Operation{
 
 	public And(Expression op1, Expression op2) {

@@ -1,4 +1,4 @@
-package maths;
+
 public abstract class Expression {
 	
 	public String toString() {
