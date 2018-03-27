@@ -31,7 +31,7 @@ public class MotherClass {
 		else if(Expr.length()<=5) {
 			char c='x';
 			for(int i=0;i<Expr.length();i++) {
-				if(isVariable(Expr.charAt(i)))
+				if(isVariable(Expr.charAt(i))|| Expr.charAt(i)=='0'|| Expr.charAt(i)=='1')
 					notation+=Expr.charAt(i);
 				else if(isOperation(Expr.charAt(i)))
 					c=Expr.charAt(i);
@@ -141,11 +141,13 @@ public class MotherClass {
 		Expression x;
 		while(!file.isEmpty()) {
 			e=file.defiler();
-			if(isVariable(e)||(e=='1') || (e=='0')) {
+			if(isVariable(e)) {
 				temp=new Variable(e);
 				Tmpile.empilerExp(temp);
 				this.Variables.add(temp);
-				
+			}else if((e=='1') || (e=='0')) {
+				temp=new Variable(e);
+				Tmpile.empilerExp(temp);
 			}
 			else {
 				x=Tmpile.depilerExp();
@@ -186,7 +188,7 @@ public class MotherClass {
 		String expression=sc.nextLine();
 		MotherClass m=new MotherClass(expression);
 		System.out.println("Notation Postfixée :"+m.notationPostfixee(m.getExpression()));
-		System.out.println("Opération Effectué"+m.head+"\n");
+		System.out.println("Opération Effectué :"+m.head+"\n");
 		System.out.println(m);
 		
 	}
