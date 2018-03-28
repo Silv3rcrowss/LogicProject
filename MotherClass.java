@@ -24,17 +24,17 @@ public class MotherClass {
 	public String notationPostfixee(String Expr){
 		
 		String notation="";
-		if(Expr.length()==1) {
+		if(Expr.length()==1 &&(isVariable(Expr.charAt(0))|| isOperation(Expr.charAt(0)))) {
 			notation+=Expr.charAt(0);
 			return notation;
 		}
 		else if(Expr.length()<=5) {
-			char c='x';
+			String c="";
 			for(int i=0;i<Expr.length();i++) {
 				if(isVariable(Expr.charAt(i))|| Expr.charAt(i)=='0'|| Expr.charAt(i)=='1')
 					notation+=Expr.charAt(i);
 				else if(isOperation(Expr.charAt(i)))
-					c=Expr.charAt(i);
+					c+=Expr.charAt(i);
 			}
 			notation+=c;
 			return notation;
